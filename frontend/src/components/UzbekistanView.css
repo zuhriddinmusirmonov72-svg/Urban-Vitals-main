@@ -1,0 +1,374 @@
+/* O'zbekiston sahifasi uchun qo'shimcha stillar */
+
+.uz-marker:hover {
+  transform: scale(1.3);
+}
+
+/* ══════════════════════════════════════════
+   MOBILE ULTRA (≤500px) — Drawer Navigation
+   ══════════════════════════════════════════ */
+
+@media (max-width: 500px) {
+
+  /* Hide desktop city list on mobile */
+  .uz-city-list {
+    display: none;
+  }
+
+  /* Mobile drawer button */
+  .uz-mobile-drawer-btn {
+    position: fixed;
+    top: 62px;
+    left: 0.6rem;
+    z-index: 85;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .uz-mobile-drawer-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(52, 211, 153, 0.12);
+    border: 1px solid rgba(52, 211, 153, 0.3);
+    color: #34d399;
+    padding: 0.5rem 0.8rem;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-height: 38px;
+  }
+
+  .uz-mobile-drawer-toggle:active {
+    background: rgba(52, 211, 153, 0.2);
+    transform: scale(0.97);
+  }
+
+  .uz-mobile-drawer-icon {
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .uz-mobile-drawer-label {
+    font-size: 0.78rem;
+  }
+
+  .uz-mobile-drawer-count {
+    background: rgba(52, 211, 153, 0.2);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+
+  /* Drawer backdrop */
+  .uz-mobile-drawer-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 14, 8, 0.8);
+    backdrop-filter: blur(6px);
+    z-index: 200;
+    animation: fadeIn 0.2s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* Drawer panel */
+  .uz-mobile-drawer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #0b1c10;
+    border: 1px solid rgba(52, 211, 153, 0.25);
+    border-radius: 20px 20px 0 0;
+    max-height: 65vh;
+    overflow-y: auto;
+    z-index: 201;
+    animation: slideUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    -webkit-overflow-scrolling: touch;
+  }
+
+  @keyframes slideUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+  }
+
+  .uz-mobile-drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.2rem;
+    border-bottom: 1px solid rgba(52, 211, 153, 0.2);
+    position: sticky;
+    top: 0;
+    background: #0b1c10;
+    z-index: 10;
+  }
+
+  .uz-mobile-drawer-header h3 {
+    font-size: 1rem;
+    color: #34d399;
+    font-weight: 800;
+    margin: 0;
+  }
+
+  .uz-mobile-drawer-close {
+    background: transparent;
+    border: none;
+    color: #86efac;
+    font-size: 1.4rem;
+    cursor: pointer;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s;
+  }
+
+  .uz-mobile-drawer-close:active {
+    background: rgba(52, 211, 153, 0.12);
+    transform: scale(0.95);
+  }
+
+  /* Drawer city list */
+  .uz-mobile-drawer-list {
+    display: flex;
+    flex-direction: column;
+    padding: 0.8rem;
+    gap: 0.6rem;
+  }
+
+  .uz-mobile-drawer-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: rgba(52, 211, 153, 0.06);
+    border: 1px solid rgba(52, 211, 153, 0.2);
+    color: #a7f3d0;
+    padding: 0.8rem 1rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-height: 44px;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .uz-mobile-drawer-item:active {
+    transform: scale(0.98);
+  }
+
+  .uz-mobile-drawer-item.active {
+    background: rgba(52, 211, 153, 0.15);
+    border-color: #34d399;
+    color: #34d399;
+    box-shadow: 0 0 10px rgba(52, 211, 153, 0.2);
+  }
+
+  .uz-mobile-drawer-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .uz-mobile-drawer-city-name {
+    flex: 1;
+    font-size: 0.9rem;
+    text-align: left;
+  }
+
+  .uz-mobile-drawer-city-score {
+    font-weight: 800;
+    color: #34d399;
+    font-size: 0.9rem;
+    min-width: 35px;
+    text-align: right;
+  }
+
+  .uz-mobile-drawer-check {
+    font-size: 1.1rem;
+    color: #22c55e;
+    flex-shrink: 0;
+  }
+
+  /* Adjust detail panel for mobile */
+  .detail-panel {
+    max-height: calc(100vh - 160px);
+    padding-bottom: 1.5rem;
+  }
+
+}
+
+/* ══════════════════════════════════════════
+   TABLET (600px - 768px) — Collapse sidebar
+   ══════════════════════════════════════════ */
+
+@media (max-width: 768px) and (min-width: 501px) {
+
+  .uz-city-list {
+    width: 180px;
+    top: 70px;
+    max-height: calc(100vh - 100px);
+    padding: 10px;
+  }
+
+  .uz-city-list h4 {
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+  }
+
+  .uz-city-item {
+    padding: 6px 8px;
+    font-size: 0.75rem;
+    gap: 6px;
+  }
+
+  .uz-city-name {
+    font-size: 0.75rem;
+  }
+
+  .uz-city-score {
+    font-size: 0.8rem;
+    min-width: 24px;
+  }
+
+}
+
+/* Shaharlar ro'yxati */
+.uz-city-list {
+  position: absolute;
+  top: 80px;
+  left: 16px;
+  width: 220px;
+  background: rgba(15, 20, 30, 0.92);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  padding: 12px;
+  z-index: 10;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  backdrop-filter: blur(10px);
+}
+
+.uz-city-list h4 {
+  color: #4ade80;
+  margin: 0 0 10px 0;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.uz-city-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-bottom: 2px;
+}
+
+.uz-city-item:hover,
+.uz-city-item.active {
+  background: rgba(255,255,255,0.1);
+}
+
+.uz-city-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 1.5px solid rgba(255,255,255,0.5);
+}
+
+.uz-city-name {
+  flex: 1;
+  color: #e2e8f0;
+  font-size: 0.82rem;
+  line-height: 1.3;
+}
+
+.uz-city-score {
+  color: #4ade80;
+  font-weight: 700;
+  font-size: 0.85rem;
+  min-width: 28px;
+  text-align: right;
+}
+
+/* Mini progress bar in detail panel */
+.mini-bar {
+  height: 4px;
+  border-radius: 2px;
+  min-width: 4px;
+  max-width: 60px;
+  margin-right: 6px;
+  transition: width 0.3s ease;
+}
+
+.variable-right {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* O'zbekiston tugmasi */
+.uzbekistan-button {
+  background: linear-gradient(135deg, #1a9b3b, #006633) !important;
+  border-color: #1a9b3b !important;
+  margin-left: 12px;
+}
+
+.uzbekistan-button:hover {
+  background: linear-gradient(135deg, #22c55e, #15803d) !important;
+}
+
+/* Ikki tugma uchun wrapper */
+.city-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 24px 0;
+  justify-content: center;
+}
+
+/* Ekologiya tugmasi */
+.ecology-button {
+  background: linear-gradient(135deg, #065f46, #34d399) !important;
+  border-color: #34d399 !important;
+  margin-left: 12px;
+  box-shadow: 0 4px 20px rgba(52,211,153,.3) !important;
+}
+.ecology-button:hover {
+  background: linear-gradient(135deg, #34d399, #065f46) !important;
+  box-shadow: 0 6px 28px rgba(52,211,153,.5) !important;
+}
+  width: 4px;
+}
+.uz-city-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+.uz-city-list::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.2);
+  border-radius: 2px;
+}
