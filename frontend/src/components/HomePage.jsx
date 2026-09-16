@@ -48,6 +48,9 @@ function HomePage() {
             <button className="start-button ecology-button" onClick={() => navigate('/ecology')}>
               🌿 Ekologiya Markazi →
             </button>
+            <button className="start-button game-button" onClick={() => navigate('/game')}>
+              🎮 3D Ekologik O'yin →
+            </button>
           </div>
           
           <div className="hero-badges">

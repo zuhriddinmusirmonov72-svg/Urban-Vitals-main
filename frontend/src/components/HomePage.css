@@ -191,6 +191,18 @@
   font-size: 0.95rem;
 }
 
+.game-button {
+  background: linear-gradient(135deg, #8b5cf6, #a78bfa) !important;
+  border-color: #a78bfa !important;
+  margin-left: 12px;
+  box-shadow: 0 4px 20px rgba(167, 139, 250, 0.3) !important;
+}
+
+.game-button:hover {
+  background: linear-gradient(135deg, #a78bfa, #8b5cf6) !important;
+  box-shadow: 0 6px 28px rgba(167, 139, 250, 0.5) !important;
+}
+
 /* ══════════════════════════════════════
    RESPONSIVE
    ══════════════════════════════════════ */
@@ -203,7 +215,8 @@
   .city-buttons     { flex-direction: column; align-items: center; gap: .9rem; }
   .start-button     { width: 100%; max-width: 360px; font-size: 1.05rem; padding: 1rem 2rem; margin: 0; }
   .uzbekistan-button,
-  .ecology-button   { margin-left: 0 !important; }
+  .ecology-button,
+  .game-button      { margin-left: 0 !important; }
   .hero-badges      { gap: .6rem; }
   .badge            { font-size: .8rem; }
   .info-section     { padding: 2.5rem 1.2rem; }
