@@ -20,6 +20,23 @@ code {
     monospace;
 }
 
+/* App Container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-header-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1rem;
+  background: linear-gradient(to left, rgba(10, 31, 27, 0.95), transparent);
+  backdrop-filter: blur(10px);
+}
+
 /* Scrollbar styling */
 ::-webkit-scrollbar {
   width: 10px;
@@ -60,4 +77,10 @@ code {
 
 .mapboxgl-ctrl-attrib a {
   color: #34d399 !important;
+}
+
+@media (max-width: 600px) {
+  .app-header-bar {
+    padding: 0.7rem;
+  }
 }
