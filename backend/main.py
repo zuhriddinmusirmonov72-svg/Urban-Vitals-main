@@ -17,10 +17,10 @@ except ImportError:
 
 app = FastAPI(title="Urban Vitals API", description="API for Urban Vitals neighborhood data")
 
-# Configure CORS - more permissive for development
+# Configure CORS - Allow all origins
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allow all origins for development
+    allow_origins=["*"],  # Allow all origins
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
