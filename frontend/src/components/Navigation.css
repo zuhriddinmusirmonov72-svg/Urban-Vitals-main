@@ -1,0 +1,220 @@
+/* Main Navigation Container */
+.main-navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: linear-gradient(to right, rgba(10, 31, 27, 0.98), rgba(10, 31, 27, 0.95));
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(52, 211, 153, 0.2);
+  padding: 0.75rem 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Desktop Navigation */
+.nav-desktop {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  background: rgba(52, 211, 153, 0.1);
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  border-radius: 12px;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #a7f3d0;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.nav-icon .icon {
+  font-size: 1.3rem;
+  display: block;
+  min-width: 20px;
+  text-align: center;
+}
+
+.nav-icon .label {
+  font-size: 0.7rem;
+  white-space: nowrap;
+  opacity: 0.9;
+}
+
+.nav-icon:hover {
+  background: rgba(52, 211, 153, 0.2);
+  border-color: rgba(52, 211, 153, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(52, 211, 153, 0.2);
+}
+
+.nav-icon.active {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.3), rgba(52, 211, 153, 0.3));
+  border-color: #34d399;
+  color: #10b981;
+  box-shadow: 0 0 12px rgba(52, 211, 153, 0.3);
+}
+
+/* Mobile Navigation */
+.nav-mobile {
+  display: none;
+  position: relative;
+}
+
+.nav-hamburger {
+  background: rgba(52, 211, 153, 0.1);
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  border-radius: 8px;
+  padding: 0.6rem 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #34d399;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-hamburger:hover {
+  background: rgba(52, 211, 153, 0.2);
+  border-color: rgba(52, 211, 153, 0.5);
+}
+
+.hamburger-icon {
+  display: block;
+}
+
+.nav-mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(10, 31, 27, 0.98);
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 0.25rem;
+  min-width: 180px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  z-index: 1001;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-mobile-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  border: none;
+  background: transparent;
+  color: #a7f3d0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.nav-mobile-item:hover {
+  background: rgba(52, 211, 153, 0.1);
+  color: #10b981;
+}
+
+.nav-mobile-item.active {
+  background: rgba(52, 211, 153, 0.15);
+  border-left-color: #34d399;
+  color: #10b981;
+}
+
+.nav-mobile-item .icon {
+  font-size: 1.2rem;
+  min-width: 20px;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .nav-desktop {
+    gap: 0.3rem;
+  }
+
+  .nav-icon {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .nav-icon .label {
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-navigation {
+    padding: 0.6rem 1rem;
+  }
+
+  .nav-desktop {
+    display: none;
+  }
+
+  .nav-mobile {
+    display: block;
+    width: 100%;
+  }
+
+  .nav-mobile-menu {
+    position: fixed;
+    top: 100%;
+    left: 1rem;
+    right: 1rem;
+    width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-navigation {
+    padding: 0.5rem 0.8rem;
+  }
+
+  .nav-hamburger {
+    padding: 0.5rem 0.6rem;
+    font-size: 1.3rem;
+  }
+
+  .nav-mobile-menu {
+    left: 0.5rem;
+    right: 0.5rem;
+    min-width: auto;
+  }
+
+  .nav-mobile-item {
+    padding: 0.75rem 0.9rem;
+    font-size: 0.9rem;
+  }
+
+  .nav-mobile-item .icon {
+    font-size: 1.1rem;
+  }
+}

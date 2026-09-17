@@ -72,7 +72,7 @@ function TrashObject({ position, type, onCollect }) {
 
   const handleCollect = () => {
     setIsCollected(true);
-    onCollect();
+    if (onCollect) onCollect();
   };
 
   return (
@@ -304,21 +304,19 @@ export default function EcoGame3D() {
   return (
     <div className="eco-game-container">
       <div className="eco-game-canvas">
-        <Canvas camera={{ position: [15, 15, 15], fov: 50 }}>
-          <GameScene
-            characterPos={characterPos}
-            animation={animation}
-            trashItems={trashItems}
+        <Canvas shadows camera={{ position: [15, 15, 15], fov: 75 }}>
+          <GameScene 
+            characterPos={characterPos} 
+            animation={animation} 
+            trashItems={trashItems} 
             onTrashCollect={(idx) => {
-              const newTrash = trashItems.filter((_, i) => i !== idx);
-              setTrashItems(newTrash);
+              setTrashItems(prev => prev.filter((_, i) => i !== idx));
               setStats(prev => ({ ...prev, trash: prev.trash + 1 }));
-            }}
+            }} 
           />
         </Canvas>
       </div>
-
-      <div className="eco-game-ui">
+      <div className="eco-game-ui eco-game-ui-top">
         <div className="eco-game-hud">
           <div className="hud-stats">
             <div className="stat-item">

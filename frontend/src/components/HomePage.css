@@ -212,13 +212,25 @@
   .hero-subtitle    { font-size: 1.2rem; }
   .hero-features    { grid-template-columns: 1fr; gap: 1.2rem; }
   .hero-description { font-size: 1rem; margin-bottom: 2rem; }
-  .city-buttons     { flex-direction: column; align-items: center; gap: .9rem; }
-  .start-button     { width: 100%; max-width: 360px; font-size: 1.05rem; padding: 1rem 2rem; margin: 0; }
+  .city-buttons     { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0 1rem;
+  }
+  .start-button     { 
+    width: 100%; 
+    max-width: 360px; 
+    font-size: 1.05rem; 
+    padding: 1rem 2rem; 
+    margin: 0;
+  }
   .uzbekistan-button,
   .ecology-button,
   .game-button      { margin-left: 0 !important; }
-  .hero-badges      { gap: .6rem; }
-  .badge            { font-size: .8rem; }
+  .hero-badges      { gap: 0.6rem; }
+  .badge            { font-size: 0.8rem; }
   .info-section     { padding: 2.5rem 1.2rem; }
   .info-section h2  { font-size: 1.8rem; margin-bottom: 2rem; }
   .steps            { grid-template-columns: 1fr; gap: 1.2rem; }
@@ -226,9 +238,50 @@
 }
 
 @media (max-width: 480px) {
-  .hero-section     { padding: 1.5rem 1rem; min-height: unset; }
-  .hero-title       { font-size: 2rem; }
-  .hero-subtitle    { font-size: 1rem; }
+  .hero-section     { 
+    padding: 1.5rem 1rem; 
+    min-height: 100vh;
+    padding-top: 6rem;
+  }
+  .hero-title       { font-size: 2rem; margin-bottom: 0.8rem; }
+  .hero-subtitle    { font-size: 1rem; margin-bottom: 0.8rem; }
+  .hero-description { font-size: 0.95rem; margin-bottom: 1.5rem; }
   .feature-card     { padding: 1.2rem; }
   .feature-icon     { font-size: 2rem; }
+  .hero-features    { gap: 1rem; margin: 2rem auto; }
+  .start-button     { 
+    font-size: 1rem;
+    padding: 0.9rem 1.8rem;
+    width: 100%;
+    max-width: 100%;
+  }
+  .city-buttons {
+    gap: 0.75rem;
+    padding: 0;
+  }
+  .hero-badges {
+    gap: 0.5rem;
+  }
+  .badge { 
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+  }
+  .info-section {
+    padding: 2rem 1rem;
+  }
+  .info-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .steps {
+    gap: 1rem;
+  }
+  .step {
+    padding: 1rem;
+  }
+  .step-number {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+  }
 }
